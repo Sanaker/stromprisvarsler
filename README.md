@@ -79,7 +79,8 @@ Type=oneshot
 ExecStart=/usr/bin/python3 /full/stien/til/stromvarsler.py
 WorkingDirectory=/full/stien/til/prosjektmappen
 Environment="PYTHONUNBUFFERED=1"
-
+```
+```bash
 Opprett stromvarsler.timer:
 
 [Unit]
