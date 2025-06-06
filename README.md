@@ -29,31 +29,31 @@ En gratis Pushover-konto og en app token
 🎞️ Avhengigheter
 
 Installeres med pip:
-
+```bash
 pip install -r requirements.txt
-
+```
 Eksempel på requirements.txt:
-
+```pip
 requests
 matplotlib
 nordpool
 python-dotenv
 pytz
-
+```
 ⚙️ Oppsett
 
 1. Klon repoet
-
+```bash
 git clone https://github.com/dittbrukernavn/stromprisvarsler.git
 cd stromprisvarsler
-
+```
 2. Lag .env-fil
 
 Lag en .env-fil i prosjektmappen med følgende innhold:
-
+```
 PUSHOVER_TOKEN=din_pushover_app_token
 PUSHOVER_USER=din_pushover_user_key
-
+```
 3. Tilpass konfigurasjon i skriptet
 
 I Python-skriptet (stromvarsler.py), sett riktig prisområde:
@@ -61,16 +61,16 @@ I Python-skriptet (stromvarsler.py), sett riktig prisområde:
 AREA = "NO1"  # For eksempel: NO1 for Østlandet
 
 Du kan også justere terskelverdier for varsling:
-
+```python
 LOW_THRESHOLD = 0.20  # Lavpris grense
 HIGH_THRESHOLD = 0.60  # Høypris grense
-
+```
 4. Sett opp daglig varsling med systemd (Linux)
-
+```bash
 mkdir -p ~/.config/systemd/user
-
+```
 Opprett stromvarsler.service:
-
+```bash
 [Unit]
 Description=Daglig strømprisvarsel
 
@@ -92,12 +92,12 @@ Unit=stromvarsler.service
 
 [Install]
 WantedBy=timers.target
-
+```
 Aktiver timeren:
-
+```bash
 systemctl --user daemon-reload
 systemctl --user enable --now stromvarsler.timer
-
+```
 🛡️ Sikkerhet
 
 API-nøkler lagres i .env, og .env bør være i .gitignore for å hindre lekkasje.
@@ -137,4 +137,4 @@ NO5: Vestlandet (Bergen)
 
 Dette prosjektet er delt under MIT-lisens. Bruk det fritt og bidra gjerne!
 
-🂨 Laget med 💡 og mye kaffe av Sanaker
+🂨 Laget med 💡 og mye Monster av Sanaker
