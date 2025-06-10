@@ -19,8 +19,8 @@ TIMEZONE = pytz.timezone('Europe/Oslo')
 
 # Strømstøtte og MVA
 MVA_RATE = 0.25
-STROEMSTOTTE_DEKNING = 0.80
-STROEMSTOTTE_GRENSE = 0.70  # i NOK
+STROEMSTOTTE_DEKNING = 0.90 # 90% dekning av støtten
+STROEMSTOTTE_GRENSE = 0.9375  # i NOK
 
 def legg_til_mva(pris):
     return pris * (1 + MVA_RATE)
