@@ -1,0 +1,5 @@
+requests
+matplotlib
+nordpool
+python-dotenv
+pytz
